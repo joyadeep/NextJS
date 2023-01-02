@@ -1,16 +1,16 @@
-import { Avatar, Box, Card, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
-import Image from 'next/image'
+import { Avatar, Box, Card, CardContent, CardMedia, Container, Typography } from '@mui/material'
 import React from 'react'
+import {Swiper,SwiperSlide} from 'swiper/react'
+import 'swiper/css'
+import Image from 'next/image'
 
-const LatestPost = () => {
+const MostPopular = () => {
   return (
-    <Box px={3}>
-    <Typography align='center' letterSpacing={'-1px'} mb={3} variant='h4'>Latest Posts</Typography>
-    {/* <Container maxWidth="lg" sx={{pt:2}}> */}
-    <Grid container spacing={2} >
-       {
-        [1,2,3,4].map((index)=>(
-            <Grid key={index} item xs={12} sm={12} md={4} lg={3}>
+    <Container fixed sx={{my:3}}>
+        <Typography variant='h4' align='center' mb={1}>Most Popular</Typography>
+        <Swiper slidesPerView={2}
+        spaceBetween={20} loop={true}>
+           {[1,2,3,4,5,6].map(()=> <SwiperSlide>
             <Card elevation={0} sx={{bgcolor:'#fafafa'}}>
                 <CardMedia>
                     <Image src={'/images/flowerpot.jpg'} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
@@ -37,14 +37,11 @@ const LatestPost = () => {
 
                 </CardContent>
             </Card>
-        </Grid>
-        
-        ))
-       }
-    </Grid>
-    {/* </Container> */}
-    </Box>
+            </SwiperSlide>
+            )}
+        </Swiper>
+    </Container>
   )
 }
 
-export default LatestPost
+export default MostPopular

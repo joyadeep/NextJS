@@ -10,8 +10,8 @@ const Section1 = () => {
   SwiperCore.use([Autoplay])
   return (
     <>
-    <Box py={4} px={3} >
-        <Typography variant='h4' align='center' fontWeight={'bold'}>Trending</Typography>
+    <Box px={3} >
+        {/* <Typography variant='h4' align='center' >Trending</Typography> */}
         <Swiper
         autoplay={{
           delay:3000,

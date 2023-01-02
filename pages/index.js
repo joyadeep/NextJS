@@ -1,6 +1,8 @@
 
 import { Inter } from '@next/font/google'
+import Categories from '../components/Categories'
 import LatestPost from '../components/LatestPost'
+import MostPopular from '../components/MostPopular'
 import Section1 from '../components/Section1'
 import Layout from '../layout/Layout'
 
@@ -11,6 +13,8 @@ export default function Home() {
     <Layout>
       <Section1/>
       <LatestPost/>
+      <MostPopular/>
+      <Categories/>
     </Layout>
   )
 }

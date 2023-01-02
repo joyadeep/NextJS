@@ -6,7 +6,7 @@ import React from 'react'
 const CaresouelItem = () => {
   return (
     <>
-    <Grid container sx={{mt:4,background:`url:({"/images/flowerpot.jpg"})`,backgroundSize:'cover',backgroundPosition:'right'}}>
+    <Grid container >
         <Grid item md={6}>
         <Link href={"/about"}>
         <Image src={"/images/flowerpot.jpg"}  style={{objectFit:'cover'}} width={600} height={600} />
