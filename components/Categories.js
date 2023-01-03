@@ -1,5 +1,6 @@
 import { Avatar, Box, Card, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Categories = () => {
@@ -10,7 +11,8 @@ const Categories = () => {
                 <Typography variant='h5' align='center'>Business</Typography>
                {
                 [1,2,3,4].map((index)=>(
-                    <Card key={index} elevation={0} sx={{display:'flex',mb:2,height:'200px',bgcolor:'#fafafa'}}>
+                //  <Link href={'/posts/post'}>
+                    <Card component={Link} href="/posts/post" key={index} elevation={0} sx={{display:'flex',mb:2,height:'200px',bgcolor:'#fafafa',textDecoration:'none'}}>
                     <CardMedia>
                         <Image src={'/images/flowerpot.jpg'} style={{objectFit:'cover'}} width={'200'} height={200} />
                     </CardMedia>
@@ -35,6 +37,7 @@ const Categories = () => {
     
                     </CardContent>
                 </Card>
+                //  </Link>
                 ))
                }
             </Grid>
@@ -42,7 +45,7 @@ const Categories = () => {
             <Typography variant='h5' align='center'>Travel</Typography>
                {
                 [1,2,3,4].map((index)=>(
-                    <Card key={index} elevation={0} sx={{display:'flex',mb:2,height:'200px',bgcolor:'#fafafa'}}>
+                    <Card component={Link} href="/posts/post" key={index} elevation={0} sx={{display:'flex',mb:2,height:'200px',bgcolor:'#fafafa',textDecoration:'none'}}>
                     <CardMedia>
                         <Image src={'/images/flowerpot.jpg'} style={{objectFit:'cover'}} width={'200'} height={200} />
                     </CardMedia>
