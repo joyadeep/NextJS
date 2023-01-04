@@ -5,8 +5,6 @@ import fetcher from '../lib/fetcher'
 import LoadingSkeleton from './_child/loadingSkeleton'
 const LatestPost = () => {
     const {data,isLoading,isError}=fetcher('api/posts');
-    console.log("data =",data);
-    console.log("isLoading=",isLoading)
   return (
     <Box px={3}>
     <Typography align='center' letterSpacing={'-1px'} mb={3} variant='h4'>Latest Posts</Typography>

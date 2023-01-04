@@ -5,13 +5,16 @@ import SwiperCore,{Autoplay} from 'swiper'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import CaresouelItem from './CaresouelItem'
+import fetcher from '../lib/fetcher';
+import LoadingSkeleton from './_child/loadingSkeleton'
 
 const Section1 = () => {
+  const {data,isLoading,isError}=fetcher('/api/trending')
+  console.log("data=",data)
   SwiperCore.use([Autoplay])
   return (
     <>
     <Box px={3} >
-        {/* <Typography variant='h4' align='center' >Trending</Typography> */}
         <Swiper
         autoplay={{
           delay:3000,
@@ -22,8 +25,8 @@ const Section1 = () => {
       slidesPerView={1}
     >
      {
-      [1,2,3,4].map((item,index)=>(
-        <SwiperSlide><CaresouelItem/></SwiperSlide>
+      isLoading?<LoadingSkeleton/>:isError?"Error":data.map((item,index)=>(
+        <SwiperSlide><CaresouelItem item={item}/></SwiperSlide>
       ))
      }
     </Swiper>
