@@ -5,6 +5,7 @@ import 'swiper/css'
 import Image from 'next/image'
 import fetcher from '../lib/fetcher'
 import LoadingSkeleton from './_child/loadingSkeleton'
+import Link from 'next/link'
 
 
 const MostPopular = () => {
@@ -17,9 +18,10 @@ const MostPopular = () => {
            {
             isLoading?<LoadingSkeleton/>:isError?"Error":
            data.map((item)=> <SwiperSlide>
-            <Card elevation={0} sx={{bgcolor:'#fafafa'}}>
+           
+            <Card component={Link} href={`/posts/${item.id}`} elevation={0} sx={{bgcolor:'#fafafa',textDecoration:'none'}}>
                 <CardMedia>
-                    <Image src={'/images/flowerpot.jpg'} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
+                    <Image src={item.img} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
                 </CardMedia>
                 <CardContent>
                 <Box sx={{display:'flex',gap:3}}>

@@ -1,5 +1,6 @@
 import { Avatar, Box, Card, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import fetcher from '../lib/fetcher'
 import LoadingSkeleton from './_child/loadingSkeleton'
@@ -14,7 +15,7 @@ const LatestPost = () => {
         {
          data.map((value)=>(
              <Grid key={value.id} item xs={12} sm={12} md={4} lg={3}>
-             <Card elevation={0} sx={{bgcolor:'#fafafa'}}>
+             <Card component={Link} href={`/posts/${value.id}`} elevation={0} sx={{bgcolor:'#fafafa',textDecoration:'none'}}>
                  <CardMedia>
                      <Image src={value.img} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
                  </CardMedia>
