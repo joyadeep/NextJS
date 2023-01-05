@@ -7,7 +7,7 @@ import LoadingSkeleton from './_child/loadingSkeleton'
 const LatestPost = () => {
     const {data,isLoading,isError}=fetcher('api/posts');
   return (
-    <Box px={3}>
+    <Box px={3} my={3}>
     <Typography align='center' letterSpacing={'-1px'} mb={3} variant='h4'>Latest Posts</Typography>
    
     {

@@ -10,16 +10,16 @@ const Header = () => {
         <Toolbar sx={{justifyContent:'space-between'}}>
             <TextField size="small" sx={{bgcolor:'white',borderRadius:'15px',outline:'0px','& fieldset':{border:'none'}}} placeholder="Search" />
             <Link href="/"style={{textDecoration:'none'}}>
-            <Typography variant="h4" fontWeight={'bold'}  color="#434343">Design</Typography>
+            <Typography variant="h4" fontWeight={'bold'}  color="#434343">D-Blog</Typography>
             </Link>
             <Box sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-            <IconButton LinkComponent={Link} href="/about">
+            <IconButton LinkComponent={Link} href="#">
                 <Facebook/>
             </IconButton>
-            <IconButton LinkComponent={Link} href="/about">
+            <IconButton LinkComponent={Link} href="#">
                 <Instagram/>
             </IconButton>
-            <IconButton LinkComponent={Link} href="/about">
+            <IconButton LinkComponent={Link} href="#">
                 <Twitter/>
             </IconButton>
             
