@@ -25,8 +25,8 @@ const Section1 = () => {
       slidesPerView={1}
     >
      {
-      isLoading?<LoadingSkeleton/>:isError?"Error":data.map((item,index)=>(
-        <SwiperSlide><CaresouelItem item={item}/></SwiperSlide>
+      isLoading?<LoadingSkeleton/>:isError?"Error":data.map((item)=>(
+        <SwiperSlide key={item.id}><CaresouelItem item={item}/></SwiperSlide>
       ))
      }
     </Swiper>

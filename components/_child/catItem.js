@@ -8,7 +8,7 @@ const catItem = (item) => {
   return (
     <Card component={Link} href="/posts/post" elevation={0} sx={{display:'flex',mb:2,height:'200px',bgcolor:'#fafafa',textDecoration:'none'}}>
     <CardMedia>
-        <Image src={img} style={{objectFit:'cover'}} width={'200'} height={200} />
+        <Image src={img} alt={img} style={{objectFit:'cover'}} width={'200'} height={200} />
     </CardMedia>
     <CardContent>
     <Box sx={{display:'flex',gap:1}}>

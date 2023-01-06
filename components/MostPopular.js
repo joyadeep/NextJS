@@ -21,7 +21,7 @@ const MostPopular = () => {
            
             <Card component={Link} href={`/posts/${item.id}`} elevation={0} sx={{bgcolor:'#fafafa',textDecoration:'none'}}>
                 <CardMedia>
-                    <Image src={item.img} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
+                    <Image src={item.img} alt={item.img} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
                 </CardMedia>
                 <CardContent>
                 <Box sx={{display:'flex',gap:3}}>

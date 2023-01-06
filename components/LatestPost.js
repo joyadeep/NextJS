@@ -17,7 +17,7 @@ const LatestPost = () => {
              <Grid key={value.id} item xs={12} sm={12} md={4} lg={3}>
              <Card component={Link} href={`/posts/${value.id}`} elevation={0} sx={{bgcolor:'#fafafa',textDecoration:'none'}}>
                  <CardMedia>
-                     <Image src={value.img} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
+                     <Image src={value.img} alt={value.img} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
                  </CardMedia>
                  <CardContent>
                  <Box sx={{display:'flex',gap:3}}>

@@ -10,7 +10,7 @@ const CaresouelItem = (item) => {
     <>
     <Grid container component={Link} href={`/posts/${id}`} sx={{textDecoration:'none'}} >
         <Grid item md={6}>
-        <Image src={img}  style={{objectFit:'cover'}} width={600} height={600} />
+        <Image src={img} alt={img} style={{objectFit:'cover'}} width={600} height={600} />
         </Grid>
         <Grid item md={6} sx={{display:'flex',flexDirection:'column',justifyContent:'center',pl:2}}>
             <Box sx={{display:'flex',gap:3}}>
