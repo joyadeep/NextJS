@@ -17,8 +17,7 @@ const MostPopular = () => {
         spaceBetween={20} loop={true}>
            {
             isLoading?<LoadingSkeleton/>:isError?"Error":
-           data.map((item)=> <SwiperSlide>
-           
+           data.map((item)=> <SwiperSlide key={item.id}>
             <Card component={Link} href={`/posts/${item.id}`} elevation={0} sx={{bgcolor:'#fafafa',textDecoration:'none'}}>
                 <CardMedia>
                     <Image src={item.img} alt={item.img} style={{objectFit:'cover',width:'100%'}} width={'500'} height={200} />
