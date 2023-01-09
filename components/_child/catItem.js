@@ -4,9 +4,9 @@ import Link from 'next/link'
 import React from 'react'
 
 const catItem = (item) => {
-    const {title,subtitle,published,category,img,author}=item.item
+    const {title,subtitle,published,category,img,author,id}=item.item
   return (
-    <Card component={Link} href="/posts/post" elevation={0} sx={{display:'flex',mb:2,height:'200px',bgcolor:'#fafafa',textDecoration:'none'}}>
+    <Card component={Link} href={`/posts/${id}`} elevation={0} sx={{display:'flex',mb:2,height:'200px',bgcolor:'#fafafa',textDecoration:'none'}}>
     <CardMedia>
         <Image src={img} alt={img} style={{objectFit:'cover'}} width={'200'} height={200} />
     </CardMedia>

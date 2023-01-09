@@ -4,9 +4,9 @@ import React from 'react'
 import Related from '../../components/_child/Related'
 import Layout from '../../layout/Layout'
 import getPost from '../../lib/helper';
+import data from '../api/data'
 
 const post = ({title,description,author,subtitle,category,published,img}) => {
-  console.log("title :",title)
   return (
    <Layout>
      <Container maxWidth='md' sx={{display:'flex',flexDirection:'column',alignItems:'center',mt:3}}>
@@ -35,7 +35,9 @@ export default post
 
 
 export async function getStaticProps( { params } ){
-  const posts = await getPost(params.postId)
+  // const posts = await getPost(params.postId)
+  const{Posts}=data;
+  const posts=await Posts.find(item=>params.postId==item.id)
 
   return {
       props : posts
@@ -43,8 +45,9 @@ export async function getStaticProps( { params } ){
 }
 
 export async function getStaticPaths(){
-  const posts = await getPost();
-  const paths = posts.map(value => {
+  const{Posts}=data;
+  // const posts = await getPost();
+  const paths = Posts.map(value => {
       return {
           params : {
               postId : value.id.toString()
