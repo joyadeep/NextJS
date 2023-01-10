@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import { Box, Typography } from '@mui/material'
-
+import { Box, Button, Typography } from '@mui/material'
+import { PersonAdd } from '@mui/icons-material'
+import EmployeeList from '../component/EmployeeList'
+import EmployeeForm from '../component/EmployeeForm'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -15,8 +17,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box>
-        <Typography variant='h4'>Start buildng project.</Typography>
+      <Box sx={{px:3}}>
+        <Typography variant='h4' align={'center'}>Employee Management</Typography>
+        <Button variant='contained' disableElevation color='secondary' endIcon={<PersonAdd fontSize='18px' />} sx={{textTransform:'none',fontSize:'15px'}}>Add Employee</Button>
+        <EmployeeForm/>
+        <EmployeeList/>
       </Box>
      
     </>
