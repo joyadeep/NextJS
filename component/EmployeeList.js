@@ -1,14 +1,9 @@
 import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
 import TableActons from './_child/TableActons'
+import data from '../database/data.json'
 
 const EmployeeList = () => {
-    const employee=[
-        {name:"ram",email:"ram@gamil.com",phone:'9812543458',status:'active'},
-        {name:"ram",email:"ram@gamil.com",phone:'9812543458',status:'inactive'},
-        {name:"ram",email:"ram@gamil.com",phone:'9812543458',status:'active'},
-        {name:"ram",email:"ram@gamil.com",phone:'9812543458',status:'inactive'}
-    ]
   return (
     <Box mt={3}>
         <TableContainer>
@@ -24,9 +19,9 @@ const EmployeeList = () => {
                 </TableHead>
                 <TableBody>
                     {
-                        employee.map((item,index)=>(
-                            <TableRow>
-                        <TableCell sx={{fontSize:'16px'}}>{item.name}</TableCell>
+                        data.map((item)=>(
+                            <TableRow key={item.id}>
+                        <TableCell sx={{fontSize:'16px'}}>{item.fullname}</TableCell>
                         <TableCell  sx={{fontSize:'16px'}}>{item.email}</TableCell>
                         <TableCell sx={{fontSize:'16px'}}>{item.phone}</TableCell>
                         <TableCell sx={{padding:0}}>

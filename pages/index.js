@@ -6,9 +6,11 @@ import { Box, Button, Typography } from '@mui/material'
 import { PersonAdd } from '@mui/icons-material'
 import EmployeeList from '../component/EmployeeList'
 import EmployeeForm from '../component/EmployeeForm'
+import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const[isFormOpen,setIsFormOpen]=useState(false);
   return (
     <>
       <Head>
@@ -19,8 +21,10 @@ export default function Home() {
       </Head>
       <Box sx={{px:3}}>
         <Typography variant='h4' align={'center'}>Employee Management</Typography>
-        <Button variant='contained' disableElevation color='secondary' endIcon={<PersonAdd fontSize='18px' />} sx={{textTransform:'none',fontSize:'15px'}}>Add Employee</Button>
-        <EmployeeForm/>
+        <Button variant='contained' onClick={()=>{setIsFormOpen(!isFormOpen)}} disableElevation color='secondary' endIcon={<PersonAdd fontSize='18px' />} sx={{textTransform:'none',fontSize:'15px'}}>Add Employee</Button>
+        {
+          isFormOpen && <EmployeeForm/>
+        }
         <EmployeeList/>
       </Box>
      

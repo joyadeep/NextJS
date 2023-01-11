@@ -1,0 +1,16 @@
+[
+    {
+        "id":1,
+        "fullname":"joyadeep Limbu",
+        "email":"jlimbu@gmail.com",
+        "phone":"9813534587",
+        "status":"active"
+    },
+    {
+        "id":2,
+        "fullname":"ram tamang",
+        "email":"ramtamang@gmail.com",
+        "phone":"9823456678",
+        "status":"inactive"
+    }
+]
